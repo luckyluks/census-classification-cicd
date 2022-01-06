@@ -1,0 +1,45 @@
+name: CI to lint (flake8) and test (pytest) before CD
+
+# Run on every push
+on:
+  push:
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # This workflow contains a single job called "test"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current code base
+        uses: actions/checkout@v2
+        
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+        
+      - name: Configure AWS access
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+        
+      - name: Setup DVC
+        uses: iterative/setup-dvc@v1
+        
+      - name: Pull data from DVC
+        run: dvc pull
+        
+      - name: Install pip dependencies
+        run: |
+          pip install -r requirements.txt
+          
+      - name: Run linting
+        run: flake8 .
+        
+      - name: Run Tests
+        run: python -m pytest
