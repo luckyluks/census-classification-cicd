@@ -1,0 +1,4 @@
+[core]
+    remote = censuscicdbucket
+['remote "censuscicdbucket"']
+    url = s3://censuscicdbucket
