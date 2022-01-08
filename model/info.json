@@ -1,0 +1,13 @@
+{
+    "metrics": {
+        "fbeta": 0.718931872646354,
+        "precision": 0.7948523845571537,
+        "recall": 0.65625
+    },
+    "params": {
+        "learning_rate": 0.1,
+        "max_depth": 5,
+        "n_estimators": 100
+    },
+    "score": 0.8708924130647937
+}
