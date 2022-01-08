@@ -156,5 +156,5 @@ def feature_slice_performance(
 
         output_data["featue_performances"].append(feature_data)
 
-    with open(f"../model/slice_output.json", "w") as f:
+    with open("../model/slice_output.json", "w") as f:
         json.dump(output_data, f, sort_keys=True, indent=4)
