@@ -72,7 +72,8 @@ To initiate a training, pull the data from DVC (login required, ask me for acces
 > dvc pull
 > uvicorn main:app --reload
 ```
-This serves the endpoints "/" and "/invoke" on `http://localhost:8000`
+This serves the endpoints "/" and "/invoke" on [http://localhost:8000](http://localhost:8000).  
+Check out the docs on [http://localhost:8000/docs](http://localhost:8000/docs).
 
 
 ## Documentation
