@@ -9,3 +9,4 @@ uvicorn
 gunicorn
 flake8
 pytest
+dvc[s3]
