@@ -85,6 +85,7 @@ This serves the endpoints "/" and "/invoke" on `http://localhost:8000`
 
 ### Summary
 The ML application including training and serving a ML model was developed. Once trained, the repo is tested with CI of Github actions and runs with CD on heroku.
+The app is available [here](https://census-classification-cicd.herokuapp.com/)
 
 ### Opportunities for future improvement
 
